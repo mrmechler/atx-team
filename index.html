@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join The Perry Henderson Group | Douglas Elliman Austin</title>
+  <meta name="description" content="A private opportunity to grow your real estate career with The Perry Henderson Group at Douglas Elliman in Austin, Texas." />
+
+  <style>
+    :root{
+      --navy:#07162f;
+      --navy-2:#0d2347;
+      --navy-3:#122b52;
+      --cyan:#00a6c8;
+      --cyan-soft:#13b7d8;
+      --ink:#111827;
+      --muted:#5d6674;
+      --paper:#ffffff;
+      --soft:#f5f5f2;
+      --line:#d7dde5;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+      --shadow: 0 20px 60px rgba(5,19,42,.14);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--ink);
+      background:var(--paper);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button{font:inherit}
+
+    .wrap{
+      width:min(1180px,calc(100% - 44px));
+      margin:0 auto;
+    }
+
+    .eyebrow{
+      margin:0 0 14px;
+      color:var(--cyan);
+      font-size:12px;
+      line-height:1;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+    }
+
+    .accent-line{
+      width:44px;
+      height:3px;
+      background:var(--cyan);
+      margin:22px 0;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:735px;
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg, rgba(3,17,39,.98) 0%, rgba(3,17,39,.88) 36%, rgba(3,17,39,.32) 66%, rgba(3,17,39,.05) 100%),
+        linear-gradient(180deg, rgba(5,18,40,.1), rgba(5,18,40,.38)),
+        url("assets/hero-austin.jpg") center/cover no-repeat;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0;
+      height:180px;
+      background:linear-gradient(to bottom,transparent,rgba(5,18,40,.35));
+      pointer-events:none;
+    }
+
+    .hero-top{
+      padding-top:34px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-logo{
+      width:min(560px,72vw);
+      max-height:84px;
+      object-fit:contain;
+      object-position:left center;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:min(625px,100%);
+      padding:86px 0 105px;
+    }
+
+    .hero h1{
+      font-family:var(--serif);
+      font-size:clamp(58px,6.7vw,92px);
+      font-weight:400;
+      line-height:.93;
+      letter-spacing:-.045em;
+      margin:0;
+    }
+
+    .hero h1 em{
+      display:block;
+      font-size:.47em;
+      line-height:1.1;
+      margin-top:10px;
+      font-weight:400;
+      letter-spacing:-.025em;
+    }
+
+    .hero-copy{
+      width:min(480px,100%);
+      font-size:18px;
+      line-height:1.6;
+      margin:0 0 26px;
+      color:rgba(255,255,255,.93);
+    }
+
+    .text-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      min-height:54px;
+      border:1px solid rgba(255,255,255,.88);
+      padding:0 22px;
+      color:#fff;
+      background:rgba(5,18,40,.22);
+      font-size:13px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      transition:.2s ease;
+      backdrop-filter:blur(4px);
+    }
+
+    .text-button:hover{
+      background:#fff;
+      color:var(--navy);
+      transform:translateY(-1px);
+    }
+
+    .text-button svg{
+      width:22px;
+      height:22px;
+      flex:0 0 auto;
+    }
+
+    .hero-note{
+      margin:10px 0 0 57px;
+      font-family:var(--serif);
+      font-style:italic;
+      font-size:14px;
+      color:rgba(255,255,255,.8);
+    }
+
+    /* STAT BAND */
+    .stat-band{
+      background:linear-gradient(90deg,var(--navy),#071c3b 58%,#0d254b);
+      color:#fff;
+      position:relative;
+      z-index:3;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .stat{
+      min-height:195px;
+      padding:31px 26px 27px;
+      text-align:center;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+    }
+
+    .stat:not(:last-child)::after{
+      content:"";
+      position:absolute;
+      top:29px;
+      right:0;
+      bottom:29px;
+      width:1px;
+      background:rgba(255,255,255,.35);
+    }
+
+    .stat-icon{
+      width:38px;
+      height:38px;
+      color:var(--cyan);
+      margin-bottom:12px;
+    }
+
+    .stat-number{
+      font-family:var(--serif);
+      font-size:34px;
+      line-height:1;
+      margin-bottom:5px;
+      font-weight:400;
+    }
+
+    .stat-label{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.11em;
+      margin-bottom:10px;
+      min-height:14px;
+    }
+
+    .stat-copy{
+      color:rgba(255,255,255,.82);
+      font-size:12px;
+      line-height:1.45;
+      max-width:190px;
+      margin:0;
+    }
+
+    /* BRAND ADVANTAGE */
+    .brand-section{
+      padding:82px 0;
+      background:#fff;
+    }
+
+    .brand-grid{
+      display:grid;
+      grid-template-columns:1fr 1.08fr;
+      gap:52px;
+      align-items:center;
+    }
+
+    .brand-image{
+      min-height:460px;
+      background:
+        linear-gradient(rgba(9,28,58,.03),rgba(9,28,58,.03)),
+        url("assets/elliman-office.jpg") center/cover no-repeat;
+      box-shadow:var(--shadow);
+    }
+
+    .section-title{
+      font-family:var(--serif);
+      font-size:clamp(38px,4.2vw,56px);
+      line-height:1.02;
+      letter-spacing:-.035em;
+      font-weight:400;
+      margin:0;
+      color:#182033;
+    }
+
+    .section-title em{
+      display:block;
+      margin-top:8px;
+      font-size:.65em;
+      line-height:1.1;
+      font-weight:400;
+    }
+
+    .brand-copy{
+      font-size:15px;
+      line-height:1.65;
+      color:#333c4d;
+      margin:0;
+      max-width:590px;
+    }
+
+    .checklist{
+      margin:18px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+
+    .checklist li{
+      display:flex;
+      gap:11px;
+      font-size:14px;
+      line-height:1.45;
+      color:#344054;
+    }
+
+    .check{
+      color:var(--cyan);
+      font-weight:700;
+    }
+
+    .brand-closer{
+      margin-top:16px;
+      font-weight:700;
+      font-size:14px;
+      color:#172033;
+    }
+
+    /* QUALIFIED OPPORTUNITIES */
+    .opportunities{
+      padding:67px 0 61px;
+      background:
+        radial-gradient(circle at 85% 30%,rgba(0,166,200,.08),transparent 26%),
+        linear-gradient(90deg,#06152d,#0b2042);
+      color:#fff;
+    }
+
+    .opp-top{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:50px;
+      align-items:end;
+    }
+
+    .opportunities .section-title{
+      color:#fff;
+    }
+
+    .opportunities .section-title em{
+      color:#fff;
+    }
+
+    .opp-copy{
+      font-size:15px;
+      line-height:1.62;
+      color:rgba(255,255,255,.84);
+      max-width:500px;
+      margin:0;
+    }
+
+    .opp-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      margin-top:42px;
+      border-top:1px solid rgba(255,255,255,.28);
+    }
+
+    .opp{
+      min-height:160px;
+      padding:26px 28px 5px;
+      text-align:center;
+    }
+
+    .opp:not(:last-child){
+      border-right:1px solid rgba(255,255,255,.28);
+    }
+
+    .opp strong{
+      display:block;
+      color:var(--cyan);
+      text-transform:uppercase;
+      font-size:18px;
+      line-height:1.18;
+      letter-spacing:.03em;
+      font-weight:500;
+      min-height:45px;
+    }
+
+    .opp p{
+      color:rgba(255,255,255,.82);
+      font-size:12px;
+      line-height:1.5;
+      max-width:210px;
+      margin:11px auto 0;
+    }
+
+    /* FIT */
+    .fit-section{
+      padding:72px 0 64px;
+      background:#fff;
+      text-align:center;
+    }
+
+    .fit-section .section-title{
+      max-width:870px;
+      margin:0 auto;
+    }
+
+    .fit-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      margin-top:50px;
+    }
+
+    .fit-item{
+      padding:0 22px;
+      min-height:145px;
+    }
+
+    .fit-item:not(:last-child){
+      border-right:1px solid #b9c2cf;
+    }
+
+    .fit-icon{
+      width:43px;
+      height:43px;
+      margin:0 auto 12px;
+      color:var(--cyan);
+    }
+
+    .fit-item strong{
+      display:block;
+      color:var(--cyan);
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      font-size:12px;
+      margin-bottom:9px;
+    }
+
+    .fit-item p{
+      margin:0 auto;
+      color:#40495a;
+      font-size:12px;
+      line-height:1.45;
+      max-width:170px;
+    }
+
+    /* CTA */
+    .cta{
+      min-height:370px;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      background:
+        linear-gradient(90deg,rgba(6,21,45,.98) 0%,rgba(6,21,45,.88) 42%,rgba(6,21,45,.38) 68%,rgba(6,21,45,.08) 100%),
+        url("assets/austin-night.jpg") center/cover no-repeat;
+    }
+
+    .cta-content{
+      width:min(560px,100%);
+      padding:58px 0;
+    }
+
+    .cta .section-title{
+      color:#fff;
+      font-size:clamp(40px,4.5vw,60px);
+    }
+
+    .cta-copy{
+      margin:18px 0 20px;
+      color:rgba(255,255,255,.88);
+      font-size:15px;
+      line-height:1.55;
+      max-width:450px;
+    }
+
+    .cta .text-button{
+      background:var(--cyan);
+      color:#fff;
+      border-color:var(--cyan);
+    }
+
+    .cta .text-button:hover{
+      background:#fff;
+      border-color:#fff;
+      color:var(--navy);
+    }
+
+    .contact-line{
+      margin-top:11px;
+      font-size:12px;
+      color:rgba(255,255,255,.8);
+      letter-spacing:.01em;
+    }
+
+    .privacy-line{
+      margin-top:4px;
+      font-family:var(--serif);
+      font-style:italic;
+      font-size:13px;
+      color:rgba(255,255,255,.9);
+    }
+
+    footer{
+      padding:22px 0 26px;
+      background:#041126;
+      color:rgba(255,255,255,.58);
+      font-size:10px;
+      line-height:1.6;
+      letter-spacing:.03em;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:930px){
+      .stats{grid-template-columns:1fr 1fr}
+      .stat:nth-child(2)::after{display:none}
+      .stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.25)}
+      .brand-grid,.opp-top{grid-template-columns:1fr}
+      .brand-image{min-height:420px}
+      .fit-grid{grid-template-columns:repeat(2,1fr);gap:34px 0}
+      .fit-item:nth-child(2n){border-right:0}
+      .fit-item:last-child{
+        grid-column:1/-1;
+        border-right:0;
+      }
+    }
+
+    @media(max-width:680px){
+      .wrap{width:calc(100% - 30px)}
+      .hero{min-height:720px;background-position:67% center}
+      .hero-top{padding-top:24px}
+      .hero-logo{width:min(390px,86vw)}
+      .hero-content{padding:84px 0 76px}
+      .hero h1{font-size:54px}
+      .hero h1 em{font-size:.46em}
+      .hero-copy{font-size:16px}
+      .hero-note{margin-left:0}
+      .stats{grid-template-columns:1fr}
+      .stat{min-height:170px}
+      .stat:not(:last-child)::after{display:none}
+      .stat{border-bottom:1px solid rgba(255,255,255,.22)}
+      .stat:last-child{border-bottom:0}
+      .brand-section{padding:62px 0}
+      .brand-image{min-height:330px}
+      .opp-grid{grid-template-columns:1fr}
+      .opp{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.25)}
+      .opp:last-child{border-bottom:0}
+      .fit-grid{grid-template-columns:1fr}
+      .fit-item{
+        border-right:0!important;
+        border-bottom:1px solid var(--line);
+        padding:22px 0;
+      }
+      .fit-item:first-child{padding-top:0}
+      .fit-item:last-child{border-bottom:0}
+      .cta{background-position:65% center}
+      .cta-content{padding:52px 0}
+      .text-button{width:100%}
+      .footer-inner{flex-direction:column}
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="wrap hero-top">
+      <img class="hero-logo" src="assets/de-phg.png" alt="The Perry Henderson Group at Douglas Elliman Real Estate">
+    </div>
+
+    <div class="wrap">
+      <div class="hero-content">
+        <p class="eyebrow">A Private Opportunity</p>
+
+        <h1>
+          Elevate your career.
+          <em>Disrupt the Austin market.</em>
+        </h1>
+
+        <div class="accent-line"></div>
+
+        <p class="hero-copy">
+          Join The Perry Henderson Group at Douglas Elliman and build the business
+          you've always envisioned—with the brand, platform, support and opportunities
+          to take you further.
+        </p>
+
+        <a class="text-button sms-link" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20.5 11.2c0 4.3-4 7.7-8.9 7.7-1.1 0-2.2-.2-3.2-.5L4 20.5l1.3-3.6C3.7 15.5 2.7 13.5 2.7 11.2c0-4.3 4-7.7 8.9-7.7s8.9 3.4 8.9 7.7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          Text Michael & Perry
+        </a>
+
+        <p class="hero-note">Start a private conversation.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="stat-band">
+    <div class="wrap stats">
+      <article class="stat">
+        <svg class="stat-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="19" stroke="currentColor" stroke-width="2"/>
+          <path d="M5 24h38M24 5c5 5.2 7.5 11.5 7.5 19S29 37.8 24 43M24 5c-5 5.2-7.5 11.5-7.5 19S19 37.8 24 43" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <div class="stat-number">115+</div>
+        <div class="stat-label">Offices</div>
+        <p class="stat-copy">Across key markets coast to coast.</p>
+      </article>
+
+      <article class="stat">
+        <svg class="stat-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="18" cy="18" r="7" stroke="currentColor" stroke-width="2"/>
+          <circle cx="31" cy="20" r="6" stroke="currentColor" stroke-width="2"/>
+          <path d="M6 39c1.2-7 5.2-10.5 12-10.5S28.8 32 30 39M28 30c6.5.3 10.3 3.3 11.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="stat-number">6,000+</div>
+        <div class="stat-label">Agents</div>
+        <p class="stat-copy">A collaborative network of industry leaders.</p>
+      </article>
+
+      <article class="stat">
+        <svg class="stat-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M6 18 24 8l18 10-18 10L6 18Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M13 23v10c5 5 17 5 22 0V23" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Training</div>
+        <p class="stat-copy">World-class education when you need it.</p>
+      </article>
+
+      <article class="stat">
+        <svg class="stat-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M7 38h34M11 34V23M20 34V16M29 34V20M38 34V9" stroke="currentColor" stroke-width="2"/>
+          <path d="m10 17 9-7 8 4 11-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="stat-number" style="font-size:29px">Proven</div>
+        <div class="stat-label">Performance</div>
+        <p class="stat-copy">Backed by a brand built on trust and results.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="brand-section">
+    <div class="wrap brand-grid">
+      <div class="brand-image" aria-label="Douglas Elliman luxury office"></div>
+
+      <div>
+        <p class="eyebrow">The Elliman Advantage</p>
+        <h2 class="section-title">
+          The brand opens doors.
+          <em>Our team helps you walk through them.</em>
+        </h2>
+
+        <div class="accent-line"></div>
+
+        <p class="brand-copy">
+          Douglas Elliman is one of the most recognized names in luxury real estate.
+          As part of The Perry Henderson Group, you'll combine that credibility with
+          a local team built on collaboration, accountability and agent success.
+        </p>
+
+        <ul class="checklist">
+          <li><span class="check">✓</span><span>Refined luxury positioning and marketing</span></li>
+          <li><span class="check">✓</span><span>Global referral network and relationships</span></li>
+          <li><span class="check">✓</span><span>Industry-leading technology and resources</span></li>
+          <li><span class="check">✓</span><span>Local leadership with a hands-on approach</span></li>
+        </ul>
+
+        <p class="brand-closer">You focus on your clients. We help build the platform around you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="opportunities">
+    <div class="wrap">
+      <div class="opp-top">
+        <div>
+          <p class="eyebrow">Qualified Opportunities</p>
+          <h2 class="section-title">
+            A steady flow of qualified buyers.
+            <em>More opportunities. More conversations.</em>
+          </h2>
+        </div>
+
+        <p class="opp-copy">
+          Our lead-generation platform creates opportunities with serious buyers so you
+          can spend more of your time building relationships, advising clients and closing business.
+        </p>
+      </div>
+
+      <div class="opp-grid">
+        <article class="opp">
+          <strong>Zillow<br>Preferred Team</strong>
+          <p>Premium visibility and trust with motivated buyers.</p>
+        </article>
+
+        <article class="opp">
+          <strong>Qualified<br>Buyer Opportunities</strong>
+          <p>Real inquiries delivered consistently to agents ready to respond.</p>
+        </article>
+
+        <article class="opp">
+          <strong>Local Expertise.<br>Global Reach.</strong>
+          <p>Deep Austin knowledge paired with worldwide exposure.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="fit-section">
+    <div class="wrap">
+      <p class="eyebrow">Who We're Looking For</p>
+      <h2 class="section-title">
+        Ambitious. Client-focused. Coachable.
+        <em>Sound like you?</em>
+      </h2>
+
+      <div class="accent-line" style="margin-left:auto;margin-right:auto"></div>
+
+      <div class="fit-grid">
+        <article class="fit-item">
+          <svg class="fit-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M24 5 7 17l17 26 17-26L24 5Z" stroke="currentColor" stroke-width="2"/>
+            <path d="m7 17 9 1 8 25 8-25 9-1M16 18l8-13 8 13" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <strong>Driven</strong>
+          <p>You have big goals and a strong work ethic.</p>
+        </article>
+
+        <article class="fit-item">
+          <svg class="fit-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2"/>
+            <path d="M10 42c1.3-9 6-14 14-14s12.7 5 14 14" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 14c-3 1.6-5 4.2-5 7 0 4.2 4.4 7.7 10 8.3M40 14c3 1.6 5 4.2 5 7 0 4.2-4.4 7.7-10 8.3" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <strong>Client Obsessed</strong>
+          <p>You put relationships and results first.</p>
+        </article>
+
+        <article class="fit-item">
+          <svg class="fit-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M7 39h34M12 34V24M23 34V18M34 34V10" stroke="currentColor" stroke-width="2"/>
+            <path d="m10 18 12-9 8 5 9-8M34 6h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <strong>Entrepreneurial</strong>
+          <p>You think like an owner and build your business.</p>
+        </article>
+
+        <article class="fit-item">
+          <svg class="fit-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="m8 21 9-9 8 7-9 9-8-7ZM40 21l-9-9-8 7 9 9 8-7Z" stroke="currentColor" stroke-width="2"/>
+            <path d="m18 27 6 6 6-6M14 31l6 6c2 2 5 2 7 0l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <strong>Team Player</strong>
+          <p>You value collaboration and shared success.</p>
+        </article>
+
+        <article class="fit-item">
+          <svg class="fit-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="m24 5 5.8 11.8L43 18.7l-9.5 9.2 2.2 13L24 34.8 12.3 41l2.2-13L5 18.7l13.2-1.9L24 5Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <strong>Coachable</strong>
+          <p>You're committed to growth and excellence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <div class="cta-content">
+        <p class="eyebrow">Let's Talk</p>
+
+        <h2 class="section-title">
+          Your next chapter
+          <em>starts with a conversation.</em>
+        </h2>
+
+        <div class="accent-line"></div>
+
+        <p class="cta-copy">
+          Text us directly to schedule a confidential conversation about the opportunity.
+        </p>
+
+        <a class="text-button sms-link" href="#">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20.5 11.2c0 4.3-4 7.7-8.9 7.7-1.1 0-2.2-.2-3.2-.5L4 20.5l1.3-3.6C3.7 15.5 2.7 13.5 2.7 11.2c0-4.3 4-7.7 8.9-7.7s8.9 3.4 8.9 7.7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          Text Michael & Perry
+        </a>
+
+        <div class="contact-line">
+          Michael: (512) 937-2696 &nbsp;|&nbsp; Perry: (512) 791-7462
+        </div>
+        <div class="privacy-line">We'll respond personally.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>© 2026 The Perry Henderson Group at Douglas Elliman Real Estate.</div>
+      <div>Austin, Texas · Equal Housing Opportunity</div>
+    </div>
+  </footer>
+
+  <script>
+    /*
+      GROUP TEXT
+      iPhone/iPad and many mobile messaging clients support multiple SMS recipients
+      separated by commas. The body is prefilled but intentionally simple.
+    */
+    const recipients = "+15129372696,+15127917462";
+    const message = "Hi Michael and Perry — I'm interested in learning more about The Perry Henderson Group.";
+    const smsURL = `sms:${recipients}?&body=${encodeURIComponent(message)}`;
+
+    document.querySelectorAll(".sms-link").forEach(link => {
+      link.href = smsURL;
+    });
+  </script>
+</body>
+</html>
