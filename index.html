@@ -176,22 +176,22 @@
       color:rgba(255,255,255,.8);
     }
 
+    /* DOUGLAS ELLIMAN NETWORK INTRO */
+    .network-heading{
+      padding-top:30px;
+      text-align:center;
+    }
+
+    .network-heading .eyebrow{
+      margin-bottom:0;
+    }
+
     /* STAT BAND */
     .stat-band{
       background:linear-gradient(90deg,var(--navy),#071c3b 58%,#0d254b);
       color:#fff;
       position:relative;
       z-index:3;
-    }
-
-
-    .stats-heading{
-      text-align:center;
-      padding:34px 0 0;
-    }
-
-    .stats-heading .eyebrow{
-      margin:0;
     }
 
     .stats{
@@ -589,13 +589,12 @@
         border-top:2px solid rgba(0,166,200,.35);
       }
 
-      .stats-heading{
-        padding-top:28px;
+      .network-heading{
+        padding-top:22px;
       }
 
       .stats{grid-template-columns:1fr}
       .stat{min-height:170px}
-      .stat:first-child{padding-top:24px}
       .stat:not(:last-child)::after{display:none}
       .stat{border-bottom:1px solid rgba(255,255,255,.22)}
       .stat:last-child{border-bottom:0}
@@ -701,7 +700,7 @@
   </header>
 
   <section class="stat-band">
-    <div class="wrap stats-heading">
+    <div class="wrap network-heading">
       <p class="eyebrow">The Douglas Elliman Network</p>
     </div>
 
@@ -838,9 +837,10 @@
 
         <article class="fit-item">
           <svg class="fit-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2"/>
-            <path d="M10 42c1.3-9 6-14 14-14s12.7 5 14 14" stroke="currentColor" stroke-width="2"/>
-            <path d="M8 14c-3 1.6-5 4.2-5 7 0 4.2 4.4 7.7 10 8.3M40 14c3 1.6 5 4.2 5 7 0 4.2-4.4 7.7-10 8.3" stroke="currentColor" stroke-width="2"/>
+            <circle cx="24" cy="17" r="5.8" stroke="currentColor" stroke-width="2.1"/>
+            <path d="M14 39c1.1-8.4 4.8-12.4 10-12.4S32.9 30.6 34 39" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+            <ellipse cx="24" cy="24" rx="19" ry="15.5" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="42.2" cy="24" r="2.4" fill="currentColor"/>
           </svg>
           <strong>Client Obsessed</strong>
           <p>You put relationships and results first.</p>
@@ -857,8 +857,11 @@
 
         <article class="fit-item">
           <svg class="fit-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <path d="m8 21 9-9 8 7-9 9-8-7ZM40 21l-9-9-8 7 9 9 8-7Z" stroke="currentColor" stroke-width="2"/>
-            <path d="m18 27 6 6 6-6M14 31l6 6c2 2 5 2 7 0l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="24" cy="14" r="5.5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="11.5" cy="18" r="4.5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="36.5" cy="18" r="4.5" stroke="currentColor" stroke-width="2"/>
+            <path d="M14 39c.8-8 4.2-12 10-12s9.2 4 10 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M3.5 38c.6-6.5 3.3-9.8 8-9.8 2.2 0 4 .7 5.4 2.1M44.5 38c-.6-6.5-3.3-9.8-8-9.8-2.2 0-4 .7-5.4 2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
           <strong>Team Player</strong>
           <p>You value collaboration and shared success.</p>
@@ -916,8 +919,7 @@
   <script>
     /*
       GROUP TEXT
-      iPhone/iPad and many mobile messaging clients support multiple SMS recipients
-      separated by commas. The body is prefilled but intentionally simple.
+      Restored to the earlier working format.
     */
     const recipients = "+15129372696,+15127917462";
     const message = "Hi Michael and Perry — I'm interested in learning more about The Perry Henderson Group.";
