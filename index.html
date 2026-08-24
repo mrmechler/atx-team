@@ -525,13 +525,16 @@
     @media(max-width:680px){
       .wrap{width:calc(100% - 30px)}
 
-      /* Mobile hero: tighter, more editorial, less vertical dead space */
+      /* Mobile hero ends shortly after the CTA instead of preserving extra image height */
       .hero{
-        min-height:660px;
+        min-height:0;
+        height:auto;
         background-position:67% center;
       }
 
-      .hero-top{padding-top:22px}
+      .hero-top{
+        padding-top:22px;
+      }
 
       .hero-logo{
         width:min(390px,88vw);
@@ -539,7 +542,7 @@
       }
 
       .hero-content{
-        padding:60px 0 58px;
+        padding:58px 0 64px;
       }
 
       .hero .eyebrow{
@@ -570,6 +573,10 @@
       .hero-note{
         margin-top:10px;
         text-align:center;
+      }
+
+      .stat-band{
+        border-top:2px solid rgba(0,166,200,.35);
       }
 
       .stats{grid-template-columns:1fr}
@@ -718,7 +725,7 @@
         </svg>
         <div class="stat-number" style="font-size:29px">Proven</div>
         <div class="stat-label">Performance</div>
-        <p class="stat-copy">Backed by a legacy of trust and results.</p>
+        <p class="stat-copy">Backed by a brand built on trust and results.</p>
       </article>
     </div>
   </section>
