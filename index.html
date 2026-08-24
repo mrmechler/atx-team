@@ -184,6 +184,16 @@
       z-index:3;
     }
 
+
+    .stats-heading{
+      text-align:center;
+      padding:34px 0 0;
+    }
+
+    .stats-heading .eyebrow{
+      margin:0;
+    }
+
     .stats{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -579,8 +589,13 @@
         border-top:2px solid rgba(0,166,200,.35);
       }
 
+      .stats-heading{
+        padding-top:28px;
+      }
+
       .stats{grid-template-columns:1fr}
       .stat{min-height:170px}
+      .stat:first-child{padding-top:24px}
       .stat:not(:last-child)::after{display:none}
       .stat{border-bottom:1px solid rgba(255,255,255,.22)}
       .stat:last-child{border-bottom:0}
@@ -686,6 +701,10 @@
   </header>
 
   <section class="stat-band">
+    <div class="wrap stats-heading">
+      <p class="eyebrow">The Douglas Elliman Network</p>
+    </div>
+
     <div class="wrap stats">
       <article class="stat">
         <svg class="stat-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
