@@ -445,6 +445,54 @@
       max-width:170px;
     }
 
+
+
+    /* LOCAL LEADERSHIP */
+    .leadership-section{
+      padding:42px 0 38px;
+      background:#fff;
+      text-align:center;
+      border-top:1px solid #edf0f4;
+    }
+
+    .leadership-row{
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      gap:34px;
+    }
+
+    .leader{
+      width:132px;
+    }
+
+    .leader-photo{
+      width:126px;
+      height:126px;
+      margin:0 auto;
+      object-fit:cover;
+      object-position:center top;
+      border-radius:14px;
+      border:1px solid #e1e6ed;
+    }
+
+    .leader-name{
+      margin-top:11px;
+      font-family:var(--serif);
+      font-size:17px;
+      line-height:1.15;
+      color:#182033;
+    }
+
+    .leadership-label{
+      margin:17px 0 0;
+      color:var(--muted);
+      font-size:10px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
     /* CTA */
     .cta{
       min-height:370px;
@@ -639,6 +687,15 @@
       .fit-item:last-child{border-bottom:0}
       .fit-item p{max-width:240px}
 
+
+
+      .leadership-section{padding:34px 0 31px}
+      .leadership-row{gap:22px}
+      .leader{width:112px}
+      .leader-photo{width:104px;height:104px;border-radius:12px}
+      .leader-name{margin-top:9px;font-size:15px}
+      .leadership-label{margin-top:14px;font-size:9px}
+
       .cta{
         min-height:330px;
         background-position:65% center;
@@ -690,7 +747,7 @@
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M20.5 11.2c0 4.3-4 7.7-8.9 7.7-1.1 0-2.2-.2-3.2-.5L4 20.5l1.3-3.6C3.7 15.5 2.7 13.5 2.7 11.2c0-4.3 4-7.7 8.9-7.7s8.9 3.4 8.9 7.7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
     </svg>
-    Text Michael & Perry
+    Text Perry & Michael
   </a>
 
   <p class="hero-note">Start a private conversation.</p>
@@ -839,8 +896,9 @@
           <svg class="fit-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
             <circle cx="24" cy="17" r="5.8" stroke="currentColor" stroke-width="2.1"/>
             <path d="M14 39c1.1-8.4 4.8-12.4 10-12.4S32.9 30.6 34 39" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
-            <ellipse cx="24" cy="24" rx="19" ry="15.5" stroke="currentColor" stroke-width="1.6"/>
-            <circle cx="42.2" cy="24" r="2.4" fill="currentColor"/>
+            <path d="M6.5 27.5c2.6-7.2 9.5-12 17.5-12 7.8 0 14.6 4.5 17.3 11.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M41.3 26.8c-2.5 7-9.3 11.7-17.3 11.7-7.7 0-14.4-4.4-17.2-11.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="41.2" cy="26.6" r="2.4" fill="currentColor"/>
           </svg>
           <strong>Client Obsessed</strong>
           <p>You put relationships and results first.</p>
@@ -878,6 +936,25 @@
     </div>
   </section>
 
+
+  <section class="leadership-section" aria-label="Local leadership">
+    <div class="wrap">
+      <div class="leadership-row">
+        <div class="leader">
+          <img class="leader-photo" src="assets/perry-henderson.png" alt="Perry Henderson" loading="lazy" decoding="async">
+          <div class="leader-name">Perry Henderson</div>
+        </div>
+
+        <div class="leader">
+          <img class="leader-photo" src="assets/michael-mechler.png" alt="Michael Mechler" loading="lazy" decoding="async">
+          <div class="leader-name">Michael Mechler</div>
+        </div>
+      </div>
+
+      <p class="leadership-label">The Perry Henderson Group</p>
+    </div>
+  </section>
+
   <section class="cta">
     <div class="wrap">
       <div class="cta-content">
@@ -898,11 +975,11 @@
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M20.5 11.2c0 4.3-4 7.7-8.9 7.7-1.1 0-2.2-.2-3.2-.5L4 20.5l1.3-3.6C3.7 15.5 2.7 13.5 2.7 11.2c0-4.3 4-7.7 8.9-7.7s8.9 3.4 8.9 7.7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
           </svg>
-          Text Michael & Perry
+          Text Perry & Michael
         </a>
 
         <div class="contact-line">
-          Michael: (512) 937-2696 &nbsp;|&nbsp; Perry: (512) 791-7462
+          Perry: (512) 791-7462 &nbsp;|&nbsp; Michael: (512) 937-2696
         </div>
         <div class="privacy-line">We'll respond personally.</div>
       </div>
@@ -921,8 +998,8 @@
       GROUP TEXT
       Restored to the earlier working format.
     */
-    const recipients = "+15129372696,+15127917462";
-    const message = "Hi Michael and Perry — I'm interested in learning more about The Perry Henderson Group.";
+    const recipients = "+15127917462,+15129372696";
+    const message = "Hi Perry and Michael — I'm interested in learning more about The Perry Henderson Group.";
     const smsURL = `sms:${recipients}?&body=${encodeURIComponent(message)}`;
 
     document.querySelectorAll(".sms-link").forEach(link => {
