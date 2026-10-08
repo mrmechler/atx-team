@@ -308,13 +308,13 @@
             <div class="input-wrap has-suffix"><input id="commissionPct" type="number" inputmode="decimal" min="0" max="100" step=".01" value="3" /><span class="suffix">%</span></div>
           </div>
           <div class="field">
-            <div class="label-row"><label for="effectiveSplit">Effective agent split</label></div>
+            <div class="label-row"><label for="effectiveSplit">Your commission share (%)</label></div>
             <div class="input-wrap has-suffix"><input id="effectiveSplit" type="number" inputmode="decimal" min="0" max="100" step=".01" value="67.68" aria-describedby="splitHint" /><span class="suffix">%</span></div>
           </div>
           <div class="field full">
-            <p class="field-help" id="splitHint">What you retain after brokerage and team splits, before taxes and business expenses.</p>
+            <p class="field-help" id="splitHint">The percentage of gross commission you receive after brokerage and team splits, before taxes and business expenses.</p>
             <details class="split-calculator" id="splitCalculator">
-              <summary>Calculate your effective split</summary>
+              <summary>Calculate my commission share</summary>
               <div class="split-content">
                 <div class="field-grid">
                   <div class="field">
@@ -330,9 +330,9 @@
                     <div class="input-wrap has-suffix"><input id="teamCut" type="number" min="0" max="100" step=".01" value="20" /><span class="suffix">%</span></div>
                   </div>
                 </div>
-                <div class="split-preview">Calculated effective split: <strong id="calculatedSplit">67.68%</strong></div>
+                <div class="split-preview">Your calculated commission share: <strong id="calculatedSplit">67.68%</strong></div>
                 <p class="split-note">Assumes each deduction is applied in sequence to the remaining commission. Check your actual agreement; referral fees and other charges may change what you retain.</p>
-                <button type="button" class="apply-button" id="applySplit">Use calculated split</button>
+                <button type="button" class="apply-button" id="applySplit">Use this commission share</button>
               </div>
             </details>
           </div>
