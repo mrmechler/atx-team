@@ -309,7 +309,7 @@
           </div>
           <div class="field">
             <div class="label-row"><label for="effectiveSplit">Effective agent split</label></div>
-            <div class="input-wrap has-suffix"><input id="effectiveSplit" type="number" inputmode="decimal" min="0" max="100" step=".01" value="69.84" aria-describedby="splitHint" /><span class="suffix">%</span></div>
+            <div class="input-wrap has-suffix"><input id="effectiveSplit" type="number" inputmode="decimal" min="0" max="100" step=".01" value="67.68" aria-describedby="splitHint" /><span class="suffix">%</span></div>
           </div>
           <div class="field full">
             <p class="field-help" id="splitHint">What you retain after brokerage and team splits, before taxes and business expenses.</p>
@@ -318,11 +318,11 @@
               <div class="split-content">
                 <div class="field-grid">
                   <div class="field">
-                    <div class="label-row"><label for="nationalCut">National</label></div>
-                    <div class="input-wrap has-suffix"><input id="nationalCut" type="number" min="0" max="100" step=".01" value="3" /><span class="suffix">%</span></div>
+                    <div class="label-row"><label for="nationalCut">DE National</label></div>
+                    <div class="input-wrap has-suffix"><input id="nationalCut" type="number" min="0" max="100" step=".01" value="6" /><span class="suffix">%</span></div>
                   </div>
                   <div class="field">
-                    <div class="label-row"><label for="localCut">Local</label></div>
+                    <div class="label-row"><label for="localCut">DE Local</label></div>
                     <div class="input-wrap has-suffix"><input id="localCut" type="number" min="0" max="100" step=".01" value="10" /><span class="suffix">%</span></div>
                   </div>
                   <div class="field">
@@ -330,7 +330,7 @@
                     <div class="input-wrap has-suffix"><input id="teamCut" type="number" min="0" max="100" step=".01" value="20" /><span class="suffix">%</span></div>
                   </div>
                 </div>
-                <div class="split-preview">Calculated effective split: <strong id="calculatedSplit">69.84%</strong></div>
+                <div class="split-preview">Calculated effective split: <strong id="calculatedSplit">67.68%</strong></div>
                 <p class="split-note">Assumes each deduction is applied in sequence to the remaining commission. Check your actual agreement; referral fees and other charges may change what you retain.</p>
                 <button type="button" class="apply-button" id="applySplit">Use calculated split</button>
               </div>
@@ -379,22 +379,22 @@
         <h2 class="daily-caption">conversations a day.</h2>
         <p class="result-sub">One conversation at a time, toward <strong id="goalInline">$200,000</strong> in annual commission income.</p>
         <div class="intervals">
-          <div class="interval"><strong class="value" id="weeklyCount">57</strong><span class="desc">conversations / week</span></div>
-          <div class="interval"><strong class="value" id="monthlyCount">225</strong><span class="desc">conversations / month</span></div>
+          <div class="interval"><strong class="value" id="weeklyCount">59</strong><span class="desc">conversations / week</span></div>
+          <div class="interval"><strong class="value" id="monthlyCount">234</strong><span class="desc">conversations / month</span></div>
         </div>
         <h3 class="path-title">Your production targets</h3>
-        <div class="path-row"><span>Conversations per year</span><strong id="annualConversations">2,700</strong></div>
-        <div class="path-row"><span>Appointments held</span><strong id="appointments">108</strong></div>
-        <div class="path-row"><span>Contracts signed</span><strong id="contracts">27</strong></div>
-        <div class="path-row"><span>Closings needed</span><strong id="closings">24</strong></div>
-        <div class="income-strip"><span>Estimated income per closing</span><strong id="incomePerClosing">$8,381</strong></div>
+        <div class="path-row"><span>Conversations per year</span><strong id="annualConversations">2,800</strong></div>
+        <div class="path-row"><span>Appointments held</span><strong id="appointments">112</strong></div>
+        <div class="path-row"><span>Contracts signed</span><strong id="contracts">28</strong></div>
+        <div class="path-row"><span>Closings needed</span><strong id="closings">25</strong></div>
+        <div class="income-strip"><span>Estimated income per closing</span><strong id="incomePerClosing">$8,122</strong></div>
         <button type="button" class="button button-primary button-full" id="saveCard"><span class="save-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 16v4h14v-4"/></svg>Save your goal card</span></button>
         <p class="export-note">Save a branded, phone-ready 9:16 image.</p>
         <div class="invalid" id="invalidMsg" role="status">Enter positive values and percentages from 0 to 100 to calculate a reliable goal.</div>
       </section>
     </div>
   </main>
-  <footer><div class="shell footer-inner"><span class="footer-ident">The Perry Henderson Group · Douglas Elliman Real Estate</span><span>atxteam.com/goal · Planning estimates only.</span></div></footer>
+  <footer><div class="shell footer-inner"><span class="footer-ident">The Perry Henderson Group · Douglas Elliman Real Estate</span></div></footer>
   <dialog id="exportDialog" aria-labelledby="dialogTitle">
     <div class="dialog-heading"><strong id="dialogTitle">Your goal card is ready</strong><button type="button" class="close-btn" id="closeDialog" aria-label="Close image preview">×</button></div>
     <p class="preview-desc">A branded vertical image, ready for your phone. Your numbers stay in this browser.</p>
