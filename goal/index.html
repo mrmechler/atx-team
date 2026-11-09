@@ -380,7 +380,7 @@
         <p class="result-sub">One conversation at a time, toward <strong id="goalInline">$200,000</strong> in annual commission income.</p>
         <div class="intervals">
           <div class="interval"><strong class="value" id="weeklyCount">59</strong><span class="desc">conversations / week</span></div>
-          <div class="interval"><strong class="value" id="monthlyCount">234</strong><span class="desc">conversations / month</span></div>
+          <div class="interval"><strong class="value" id="monthlyCount">234</strong><span class="desc">conversations / calendar month</span></div>
         </div>
         <h3 class="path-title">Your production targets</h3>
         <div class="path-row"><span>Conversations per year</span><strong id="annualConversations">2,800</strong></div>
@@ -390,7 +390,7 @@
         <div class="income-strip"><span>Estimated income per closing</span><strong id="incomePerClosing">$8,122</strong></div>
         <button type="button" class="button button-primary button-full" id="saveCard"><span class="save-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 16v4h14v-4"/></svg>Save your goal card</span></button>
         <p class="export-note">Save a branded, phone-ready 9:16 image.</p>
-        <div class="invalid" id="invalidMsg" role="status">Enter positive values and percentages from 0 to 100 to calculate a reliable goal.</div>
+        <div class="invalid" id="invalidMsg" role="status">Use positive income, sale price, and conversion values. Percentages must be at most 100%; prospecting time must be no more than 52 weeks/year and 7 days/week.</div>
       </section>
     </div>
   </main>
@@ -409,6 +409,15 @@
       const numberIds = ['incomeGoal','avgPrice','commissionPct','effectiveSplit','conversationsPerAppointment','appointmentsPerContract','closingRate','workWeeks','workDays'];
       const fmtInt = n => Math.ceil(n).toLocaleString('en-US', {maximumFractionDigits:0});
       const fmtMoney = n => new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
+      const fmtCommission = n => new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(n);
+
+      // Avoid an extra closing from tiny floating-point errors at exact thresholds.
+      // Example: 228420 / (400000 * .03 * .7614) can be 25.000000000000004.
+      function ceilTarget(value) {
+        const nearest = Math.round(value);
+        const tolerance = 8 * Number.EPSILON * Math.max(1, Math.abs(value));
+        return nearest >= 1 && Math.abs(value - nearest) <= tolerance ? nearest : Math.ceil(value);
+      }
       const num = id => Number(String(byId(id).value).replaceAll(',','').replaceAll('$','').trim());
       const sane = n => Number.isFinite(n) && n >= 0;
       let current = null;
@@ -443,14 +452,24 @@
         const incomeGoal = num('incomeGoal'), avgPrice = num('avgPrice');
         const commissionPct = num('commissionPct'), effectiveSplit = num('effectiveSplit');
         const incomePerClosing = avgPrice * commissionPct / 100 * effectiveSplit / 100;
-        const closings = Math.ceil(incomeGoal / incomePerClosing);
-        const contracts = Math.ceil(closings / (num('closingRate') / 100));
-        const appointments = Math.ceil(contracts * num('appointmentsPerContract'));
-        const annualConversations = Math.ceil(appointments * num('conversationsPerAppointment'));
+        const closings = ceilTarget(incomeGoal / incomePerClosing);
+        const contracts = ceilTarget(closings / (num('closingRate') / 100));
+        const appointments = ceilTarget(contracts * num('appointmentsPerContract'));
+        const annualConversations = ceilTarget(appointments * num('conversationsPerAppointment'));
         const weeks = num('workWeeks'), days = num('workDays');
-        const monthlyConversations = Math.ceil(annualConversations / 12);
-        const weeklyConversations = Math.ceil(annualConversations / weeks);
-        const dailyConversations = Math.ceil(annualConversations / (weeks * days));
+        const monthlyConversations = ceilTarget(annualConversations / 12);
+        const weeklyConversations = ceilTarget(annualConversations / weeks);
+        const dailyConversations = ceilTarget(annualConversations / (weeks * days));
+        const outputs = [closings, contracts, appointments, annualConversations, monthlyConversations, weeklyConversations, dailyConversations];
+        if (!(Number.isFinite(incomePerClosing) && incomePerClosing > 0 && outputs.every(n => Number.isSafeInteger(n) && n > 0))) {
+          byId('invalidMsg').classList.add('show');
+          byId('saveCard').disabled = true;
+          byId('saveCard').style.opacity = '.5';
+          current = null;
+          ['dailyCount','weeklyCount','monthlyCount','annualConversations','appointments','contracts','closings','incomePerClosing'].forEach(id => byId(id).textContent = '—');
+          byId('goalInline').textContent = 'your goal';
+          return;
+        }
         current = { incomeGoal, avgPrice, commissionPct, effectiveSplit, incomePerClosing, closings, contracts, appointments, annualConversations, monthlyConversations, weeklyConversations, dailyConversations, weeks, days, closingRate: num('closingRate'), perAppointment: num('conversationsPerAppointment'), perContract: num('appointmentsPerContract'), agentName: byId('agentName').value.trim() };
         byId('dailyCount').textContent = fmtInt(dailyConversations);
         byId('weeklyCount').textContent = fmtInt(weeklyConversations);
@@ -459,7 +478,7 @@
         byId('appointments').textContent = fmtInt(appointments);
         byId('contracts').textContent = fmtInt(contracts);
         byId('closings').textContent = fmtInt(closings);
-        byId('incomePerClosing').textContent = fmtMoney(incomePerClosing);
+        byId('incomePerClosing').textContent = fmtCommission(incomePerClosing);
         byId('goalInline').textContent = fmtMoney(incomeGoal);
       }
       function formatMoneyField(id) {
